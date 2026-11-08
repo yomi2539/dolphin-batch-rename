@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/allfiles;inode/directory;
+Actions=BatchRename;UndoBatchRename;
+X-KDE-Submenu=Batch Rename
+X-KDE-Submenu[zh_CN]=批量重命名
+
+[Desktop Action BatchRename]
+Name=Expression Batch Rename…
+Name[zh_CN]=表达式批量重命名…
+Icon=edit-rename
+Exec=@LAUNCHER@ %F
+
+[Desktop Action UndoBatchRename]
+Name=Undo Last Batch Rename
+Name[zh_CN]=撤销上次批量重命名
+Icon=edit-undo
+Exec=@LAUNCHER@ --undo-last

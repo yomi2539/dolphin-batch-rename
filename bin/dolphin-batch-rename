@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+HERE="$(cd -- "$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")" && pwd)"
+ROOT="$(dirname -- "$HERE")"
+
+if [ ! -x "$ROOT/.venv/bin/python" ]; then
+    echo "未找到 $ROOT/.venv，请先运行 $ROOT/install.sh" >&2
+    echo "Virtualenv not found. Run $ROOT/install.sh first." >&2
+    exit 1
+fi
+
+export PYTHONPATH="$ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
+exec "$ROOT/.venv/bin/python" -m dolphin_batch_rename "$@"
