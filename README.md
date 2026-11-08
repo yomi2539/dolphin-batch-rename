@@ -81,6 +81,19 @@ cd ~/path/to/dolphin-batch-rename
 - 每次成功操作写入 `~/.local/state/dolphin-batch-rename/history/`，保留最近 50 条
 - 撤销前会检查目标位置是否被占用，绝不覆盖已有文件
 
+## 打包分发 / Packaging
+
+```bash
+./package.sh
+```
+
+生成安装器文件：`dist/dolphin-batch-rename-1.0.0.run`。
+
+```bash
+chmod +x dolphin-batch-rename-1.0.0.run
+./dolphin-batch-rename-1.0.0.run
+```
+
 ## 开发 / 测试
 
 ```bash
@@ -91,6 +104,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 项目结构：
 
 ```
+package.sh                      构建 .run 单文件安装器
 bin/dolphin-batch-rename        启动器
 packaging/*.desktop             Dolphin ServiceMenu 模板
 src/dolphin_batch_rename/
